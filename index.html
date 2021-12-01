@@ -1,0 +1,67 @@
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:image" content="https://cdn.discordapp.com/emojis/758014548568440852.gif?v=1" />
+		<meta name="theme-color" content="#000001" />
+		<meta property="og:title" content="ravell 🦇" />
+
+		<title>a</title>
+		<link rel="shortcut icon" href="https://cdn.discordapp.com/emojis/913987247609638943.gif?size=96" type="image/gif" />
+
+		<link rel="stylesheet" href="index.css" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src *; img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *"
+		/>
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="center">
+				<div
+					id="avatar"
+					style="background-image: url('https://cdn.discordapp.com/attachments/909219038100619295/915419711494324285/unknown.png')"
+				></div>
+				<div id="name">ravellstackstcp</div>
+				<div id="buttons">
+					<div id="friends" style="cursor: pointer" onclick="redirect()">friends ღ</div>
+					<div id="friends" style="cursor: pointer" onclick="playlists()">playlists ✯</div>
+					<div id="friends" style="cursor: pointer" onclick="socials()">socials ☁</div>
+					<div id="friends" style="cursor: pointer" onclick="avatars()">avatars ☁</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		const redirect = () => (window.location.href = "file:///C:/Users/user/Desktop/site/friends/index.html");
+		const discord = () => (window.location.href = "https://discord.gg/brasil");
+		const socials = () => (window.location.href = "file:///C:/Users/user/Desktop/site/socials/index.html");
+		const playlists = () => (window.location.href = "file:///C:/Users/user/Desktop/site/playlists/index.html");
+		const avatars = () => (window.location.href = "file:///C:/Users/user/Desktop/site/avatars/index.html");
+
+		document.body.style.backgroundColor = `#000001`;
+		let x = 0;
+		const title = [];
+		const nick = "ravell#0001";
+
+		for (let i = 1; i <= nick.length; ++i) {
+			//   if (nick.slice(0, -i).endsWith(" ")) continue
+			title.push(nick.slice(0, i));
+		}
+		for (let i = 1; i < nick.length; ++i) {
+			// if (nick.slice(0, -i).endsWith(" ")) continue
+			title.push(nick.slice(0, -i));
+		}
+		title.push("&lrm;");
+
+		function loop() {
+			document.getElementsByTagName("title")[0].innerHTML = title[x++ % title.length];
+			setTimeout(() => loop(), 250);
+		}
+		loop();
+	</script>
+</html>
